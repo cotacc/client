@@ -199,7 +199,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
         });
 
         google.accounts.id.initialize({
-          client_id: '373547344231-ft1oo9dvva0qkbvu4aqhv8f4f82dunbu.apps.googleusercontent.com',
+          client_id: '1049853865764-too6l8v01j1ublfbc88sn3ujdassd2kq.apps.googleusercontent.com',
         });
 
         google.accounts.id.renderButton(
@@ -209,7 +209,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
 
         setTokenClient(
           google.accounts.oauth2.initTokenClient({
-            client_id: '373547344231-ft1oo9dvva0qkbvu4aqhv8f4f82dunbu.apps.googleusercontent.com',
+            client_id: '1049853865764-too6l8v01j1ublfbc88sn3ujdassd2kq.apps.googleusercontent.com',
             scope: 'https://www.googleapis.com/auth/calendar',
             callback: handleGoogleSignInCallback,
           })
