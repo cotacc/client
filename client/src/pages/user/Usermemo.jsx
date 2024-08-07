@@ -28,7 +28,7 @@ const UserMemoManager = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -36,7 +36,7 @@ const UserMemoManager = () => {
 
         setProfile(response.data.user);
 
-        const receivedMemoResponse = await axios.get('https://server-gzmw.onrender.com/api/showmemo', {
+        const receivedMemoResponse = await axios.get('https://client-server-f5nt.onrender.com/api/showmemo', {
           params: { token },
           headers: {
             Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ const UserMemoManager = () => {
     
 
     try {
-      await axios.post('https://server-gzmw.onrender.com/api/memo/read', { token, memoId }, {
+      await axios.post('https://client-server-f5nt.onrender.com/api/memo/read', { token, memoId }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
