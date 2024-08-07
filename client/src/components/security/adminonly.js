@@ -10,7 +10,7 @@ const PrivateRouteAdmin = ({ component: Component, ...rest }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
