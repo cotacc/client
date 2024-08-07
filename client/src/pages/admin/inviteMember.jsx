@@ -42,7 +42,7 @@ const InviteMember = () => {
   };
 
   useEffect(() => {
-    fetch('https://server-gzmw.onrender.com/api/getme', {
+    fetch('https://client-server-f5nt.onrender.com/api/getme', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -57,7 +57,7 @@ const InviteMember = () => {
     const code = generateCode();
 
     try {
-      const response = await axios.post('https://server-gzmw.onrender.com/api/invite', {
+      const response = await axios.post('https://client-server-f5nt.onrender.com/api/invite', {
         recipient: recipient,
         code: code,
         role: role,
