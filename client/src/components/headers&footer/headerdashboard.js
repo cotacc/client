@@ -34,7 +34,7 @@ const Header = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await fetch('https://server-gzmw.onrender.com/api/getme', {
+        const res = await fetch('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -61,7 +61,7 @@ const Header = () => {
 
       try {
         const notificationsRes = await axios.post(
-          'https://server-gzmw.onrender.com/api/getMynotifications',
+          'https://client-server-f5nt.onrender.com/api/getMynotifications',
           { token },
           {
             headers: {
@@ -91,7 +91,7 @@ const Header = () => {
 
   const Logout = async () => {
     try {
-      const response = await axios.post('https://server-gzmw.onrender.com/api/logout', {}, {
+      const response = await axios.post('https://client-server-f5nt.onrender.com/api/logout', {}, {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
@@ -120,7 +120,7 @@ const Header = () => {
         destinationPath = `/secretary/memo_Icreate/${memoId}`;
       }
     } else if (notification.type === 'New Memo') {
-      await axios.post('https://server-gzmw.onrender.com/api/memo/read', { token, memoId }, {
+      await axios.post('https://client-server-f5nt.onrender.com/api/memo/read', { token, memoId }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -163,7 +163,7 @@ const Header = () => {
 
   const handleUpdateDepartment = async () => {
     try {
-      const response = await axios.post('https://server-gzmw.onrender.com/api/updateDepartment', 
+      const response = await axios.post('https://client-server-f5nt.onrender.com/api/updateDepartment', 
         { department: selectedDepartment, token }, 
         {
           headers: {
