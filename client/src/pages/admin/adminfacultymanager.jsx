@@ -79,35 +79,35 @@ const Adminfacultymanager = ({ history }) => {
   
     switch (value) {
       case 'BSIT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsit';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsit';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'BSAT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsat';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsat';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'BSFT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsft';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsft';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'BSET':
-        url = 'https://server-gzmw.onrender.com/api/getallbset';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbset';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'ALL':
-        url = 'https://server-gzmw.onrender.com/api/getallusers';
+        url = 'https://client-server-f5nt.onrender.com/api/getallusers';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'SECRETARY':
-        url = 'https://server-gzmw.onrender.com/api/getallsecretary';
+        url = 'https://client-server-f5nt.onrender.com/api/getallsecretary';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'ADMIN':
-        url = 'https://server-gzmw.onrender.com/api/getalladmin';
+        url = 'https://client-server-f5nt.onrender.com/api/getalladmin';
         toastMessage = 'Successfully Retrieved!';
         break;
       case 'INSTRUCTORS':
-        url = 'https://server-gzmw.onrender.com/api/getallinstructors';
+        url = 'https://client-server-f5nt.onrender.com/api/getallinstructors';
         toastMessage = 'Successfully Retrieved!';
         break;
       default:
@@ -161,7 +161,7 @@ const Adminfacultymanager = ({ history }) => {
 
   useEffect(() => {
     axios
-      .get('https://server-gzmw.onrender.com/api/getallusers', {
+      .get('https://client-server-f5nt.onrender.com/api/getallusers', {
         params: { token },
         headers: {
           Authorization: `Bearer ${token}`,
@@ -181,7 +181,7 @@ const Adminfacultymanager = ({ history }) => {
   const handleConfirmDeleteuser = async (userrole) => {
     try {
       const result = await axios.post(
-        'https://server-gzmw.onrender.com/api/deletethisuser',
+        'https://client-server-f5nt.onrender.com/api/deletethisuser',
         { email: editedUser.email, token },
         {
           headers: {
@@ -212,7 +212,7 @@ const Adminfacultymanager = ({ history }) => {
   const handleUpdaterole = async () => {
     try {
       await axios.post(
-        'https://server-gzmw.onrender.com/api/updateuserrole',
+        'https://client-server-f5nt.onrender.com/api/updateuserrole',
         {
           email: editedUser.email,
           role: updatedrole,
@@ -225,7 +225,7 @@ const Adminfacultymanager = ({ history }) => {
         }
       );
 
-      const response = await axios.get('https://server-gzmw.onrender.com/api/getallusers', {
+      const response = await axios.get('https://client-server-f5nt.onrender.com/api/getallusers', {
         params: { token },
         headers: {
           Authorization: `Bearer ${token}`,
