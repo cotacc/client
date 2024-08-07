@@ -21,7 +21,7 @@ const SecretaryMemoDetails = () => {
     const fetchData = async () => {
       try {
         // Fetch memo details first
-        const memoDetailsResponse = await axios.get(`https://server-gzmw.onrender.com/api/memo/created_details/${memoId}`, {
+        const memoDetailsResponse = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/created_details/${memoId}`, {
           params: {
             token
           },
@@ -34,7 +34,7 @@ const SecretaryMemoDetails = () => {
         setMemoDetails(details);
 
         // Fetch PDF URL
-        const pdfResponse = await axios.get(`https://server-gzmw.onrender.com/api/memo/created/${memoId}`, {
+        const pdfResponse = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/created/${memoId}`, {
           params: {
             token
           },
