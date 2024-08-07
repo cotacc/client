@@ -54,7 +54,7 @@ const Admindashboard = ({ history }) => {
   useEffect(() => {
     const fetchLatestReceivedMemos = async () => {
       try {
-        const response = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -63,7 +63,7 @@ const Admindashboard = ({ history }) => {
         const email = response.data.user.email;
         const formattedDate = getCurrentFormattedDate();
 
-        const memoResponse = await axios.get('https://server-gzmw.onrender.com/api/getmemoofthismonth', {
+        const memoResponse = await axios.get('https://client-server-f5nt.onrender.com/api/getmemoofthismonth', {
           params: {
             date: formattedDate,
             token: token
@@ -103,7 +103,7 @@ const Admindashboard = ({ history }) => {
       const year = currentDate.getFullYear();
 
       const allReportResponse = await axios.post(
-        'https://server-gzmw.onrender.com/api/allreport',
+        'https://client-server-f5nt.onrender.com/api/allreport',
         {
           token,
           month,
@@ -181,7 +181,7 @@ const Admindashboard = ({ history }) => {
     const formattedDate = `${year}-${month}-${day}`;
 
     try {
-      const response = await fetch('https://server-gzmw.onrender.com/api/getme', {
+      const response = await fetch('https://client-server-f5nt.onrender.com/api/getme', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -192,7 +192,7 @@ const Admindashboard = ({ history }) => {
 
       const [memoResponse, eventResponse] = await Promise.all([
         axios.post(
-          'https://server-gzmw.onrender.com/api/memo/send-and-recieve',
+          'https://client-server-f5nt.onrender.com/api/memo/send-and-recieve',
           {
             date: formattedDate,
             token,
@@ -205,7 +205,7 @@ const Admindashboard = ({ history }) => {
         ),
 
         axios.post(
-          'https://server-gzmw.onrender.com/api/getevent',
+          'https://client-server-f5nt.onrender.com/api/getevent',
           {
             token,
             date: formattedDate,
@@ -289,7 +289,7 @@ const Admindashboard = ({ history }) => {
       window.location.href = `/admin/memo_Icreate/${memoId}`;
     } else if (event.type === 'received') {
       await axios.post(
-        'https://server-gzmw.onrender.com/api/memo/read',
+        'https://client-server-f5nt.onrender.com/api/memo/read',
         {
           token,
           memoId,
@@ -314,7 +314,7 @@ const Admindashboard = ({ history }) => {
   };
 
   useEffect(() => {
-    fetch('https://server-gzmw.onrender.com/api/getme', {
+    fetch('https://client-server-f5nt.onrender.com/api/getme', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -337,7 +337,7 @@ const Admindashboard = ({ history }) => {
   const handleLatestReceivedMemoClick = async (memoId) => {
     try {
       await axios.post(
-        'https://server-gzmw.onrender.com/api/memo/read',
+        'https://client-server-f5nt.onrender.com/api/memo/read',
         {
           token,
           memoId,
