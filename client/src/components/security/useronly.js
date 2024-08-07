@@ -15,7 +15,7 @@ const PrivateRouteUser = ({ component: Component, ...rest }) => {
           return;
         }
 
-        const response = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
