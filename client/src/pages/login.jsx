@@ -12,7 +12,7 @@ const Login = ({ history }) => {
     try {
       const token = response.credential;
     
-      const { data } = await axios.post('https://server-gzmw.onrender.com/api/login', {
+      const { data } = await axios.post('https://client-server-f5nt.onrender.com/api/login', {
         token: token,
       });
 
