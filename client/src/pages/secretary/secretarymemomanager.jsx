@@ -26,7 +26,7 @@ const SecretaryMemoManager = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,13 +35,13 @@ const SecretaryMemoManager = () => {
         setProfile(response.data.user);
   
         const [memoResponse, receivedMemoResponse] = await Promise.all([
-          axios.get('https://server-gzmw.onrender.com/api/memoIcreate', {
+          axios.get('https://client-server-f5nt.onrender.com/api/memoIcreate', {
             params: { token },
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          axios.get('https://server-gzmw.onrender.com/api/showmemo', {
+          axios.get('https://client-server-f5nt.onrender.com/api/showmemo', {
             params: { token },
             headers: {
               Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ const SecretaryMemoManager = () => {
   const handleRead = async (e, memoId) => {
     e.preventDefault();
     try {
-      await axios.post('https://server-gzmw.onrender.com/api/memo/read', { token, memoId }, {
+      await axios.post('https://client-server-f5nt.onrender.com/api/memo/read', { token, memoId }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
