@@ -29,13 +29,13 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
   useEffect(() => {
     const fetchMemoDetails = async () => {
       try {
-        const getme = await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        const getme = await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
 
-        const response = await axios.get(`https://server-gzmw.onrender.com/api/memo/details/${memoId}`, {
+        const response = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/details/${memoId}`, {
           params: {
             token,
           },
@@ -46,7 +46,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
 
         setMemoDetails(response.data.memo);
 
-        const res = await axios.get(`https://server-gzmw.onrender.com/api/memo/pdfdetails/${memoId}`, {
+        const res = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/pdfdetails/${memoId}`, {
           params: {
             token,
           },
@@ -60,7 +60,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
         setPdfUrl(pdfUrl);
 
         const acknowledgmentResponse = await axios.post(
-          `https://server-gzmw.onrender.com/api/Iacknowledge/${memoId}`,
+          `https://client-server-f5nt.onrender.com/api/Iacknowledge/${memoId}`,
           { token },
           {
             headers: {
@@ -69,7 +69,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
           }
         );
 
-        const googleCalendarResponse = await axios.get('https://server-gzmw.onrender.com/api/isgooglecalendarsave', {
+        const googleCalendarResponse = await axios.get('https://client-server-f5nt.onrender.com/api/isgooglecalendarsave', {
           params: {
             token,
             memoId
@@ -102,7 +102,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
   const handleAcknowledge = async () => {
     try {
       const acknowledge = await axios.post(
-        `https://server-gzmw.onrender.com/api/memo/acknowledge/${memoId}`,
+        `https://client-server-f5nt.onrender.com/api/memo/acknowledge/${memoId}`,
         { token },
         {
           headers: {
@@ -150,7 +150,7 @@ const SecretaryRecieveMemoDetails = ({ match }) => {
               'end': { 'dateTime': new Date(memoDetails.endAt).toISOString(), 'timeZone': 'Asia/Manila' }
             };
 
-            await axios.post('https://server-gzmw.onrender.com/api/googlecalendersave', {
+            await axios.post('https://client-server-f5nt.onrender.com/api/googlecalendersave', {
               token,
               memoId
             }, {
