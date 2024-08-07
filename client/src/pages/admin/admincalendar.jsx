@@ -24,7 +24,7 @@ const Admincalendar = () => {
   useEffect(() => {
     const fetchUserAndEvents = async () => {
       try {
-        const response = await axios.get('https://server-gzmw.onrender.com/api/memoreceivesendthismonth', {
+        const response = await axios.get('https://client-server-f5nt.onrender.com/api/memoreceivesendthismonth', {
           params: { token },
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -59,7 +59,7 @@ const Admincalendar = () => {
     const formattedDate = `${year}-${month}-${day}`;
 
     try {
-      const response = await axios.post("https://server-gzmw.onrender.com/api/memo/send-and-recieve", {
+      const response = await axios.post("https://client-server-f5nt.onrender.com/api/memo/send-and-recieve", {
         date: formattedDate,
         token
       }, {
@@ -93,7 +93,7 @@ const Admincalendar = () => {
       history.push(`/admin/sent_report/${event.memoid}`);
     } else if (event.type === 'Received') {
       axios.post(
-        'https://server-gzmw.onrender.com/api/memo/read',
+        'https://client-server-f5nt.onrender.com/api/memo/read',
         {
           token,
           memoId: event.memoid,
