@@ -33,7 +33,7 @@ const AdminReport = () => {
   // Function to fetch data based on selected month and year
   const handleDate = async (month, year) => {
     try {
-      const response = await axios.post('https://server-gzmw.onrender.com/api/allreport', {
+      const response = await axios.post('https://client-server-f5nt.onrender.com/api/allreport', {
         token,
         month,
         year,
