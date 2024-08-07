@@ -19,11 +19,11 @@ const SecretarysentReport = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await axios.get('https://server-gzmw.onrender.com/api/getme', {
+        await axios.get('https://client-server-f5nt.onrender.com/api/getme', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        const response = await axios.get(`https://server-gzmw.onrender.com/api/memo/created/${memoId}`, {
+        const response = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/created/${memoId}`, {
           params: { token },
           headers: { Authorization: `Bearer ${token}` },
           responseType: 'blob',
@@ -32,7 +32,7 @@ const SecretarysentReport = () => {
         const pdfUrl = URL.createObjectURL(response.data);
         setPdfUrl(pdfUrl);
 
-        const memodetails = await axios.get(`https://server-gzmw.onrender.com/api/memo/created_details/${memoId}`, {
+        const memodetails = await axios.get(`https://client-server-f5nt.onrender.com/api/memo/created_details/${memoId}`, {
           params: { token },
           headers: { Authorization: `Bearer ${token}` },
         });
