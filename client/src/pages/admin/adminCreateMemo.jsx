@@ -96,7 +96,7 @@ const AdminCreateMemo = () => {
       formData.append('recipients', JSON.stringify(recipientsArray));
       formData.append('token', token);
 
-      const { data } = await axios.post('https://server-gzmw.onrender.com/api/memo/sendmemo', formData, {
+      const { data } = await axios.post('https://client-server-f5nt.onrender.com/api/memo/sendmemo', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`,
@@ -140,28 +140,28 @@ const AdminCreateMemo = () => {
     let endpoint = '';
     switch (value) {
       case 'BSIT':
-        endpoint = 'https://server-gzmw.onrender.com/api/getbsit';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getbsit';
         break;
       case 'BSAT':
-        endpoint = 'https://server-gzmw.onrender.com/api/getbsat';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getbsat';
         break;
       case 'BSFT':
-        endpoint = 'https://server-gzmw.onrender.com/api/getbsft';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getbsft';
         break;
       case 'BSET':
-        endpoint = 'https://server-gzmw.onrender.com/api/getbset';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getbset';
         break;
       case 'ALL':
-        endpoint = 'https://server-gzmw.onrender.com/api/getuserhaverole';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getuserhaverole';
         break;
       case 'SECRETARY':
-        endpoint = 'https://server-gzmw.onrender.com/api/getsecretary';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getsecretary';
         break;
       case 'ADMIN':
-        endpoint = 'https://server-gzmw.onrender.com/api/getadmin';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getadmin';
         break;
       case 'USERS':
-        endpoint = 'https://server-gzmw.onrender.com/api/getallregularuser';
+        endpoint = 'https://client-server-f5nt.onrender.com/api/getallregularuser';
         break;
       default:
         return;
@@ -184,7 +184,7 @@ const AdminCreateMemo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const usersResponse = await axios.get('https://server-gzmw.onrender.com/api/getuserhaverole', {
+        const usersResponse = await axios.get('https://client-server-f5nt.onrender.com/api/getuserhaverole', {
           params: { token },
           headers: {
             Authorization: `Bearer ${token}`,
