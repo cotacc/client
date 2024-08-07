@@ -78,35 +78,35 @@ const Secretaryfacultymanager = ({ history }) => {
 
     switch (value) {
       case 'BSIT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsit';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsit';
         toastMessage = 'Successfully retrieved BSIT members!';
         break;
       case 'BSAT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsat';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsat';
         toastMessage = 'Successfully retrieved BSAT members!';
         break;
       case 'BSFT':
-        url = 'https://server-gzmw.onrender.com/api/getallbsft';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbsft';
         toastMessage = 'Successfully retrieved BSFT members!';
         break;
       case 'BSET':
-        url = 'https://server-gzmw.onrender.com/api/getallbset';
+        url = 'https://client-server-f5nt.onrender.com/api/getallbset';
         toastMessage = 'Successfully retrieved BSET members!';
         break;
       case 'ALL':
-        url = 'https://server-gzmw.onrender.com/api/getallusers';
+        url = 'https://client-server-f5nt.onrender.com/api/getallusers';
         toastMessage = 'Successfully retrieved all users!';
         break;
       case 'SECRETARY':
-        url = 'https://server-gzmw.onrender.com/api/getallsecretary';
+        url = 'https://client-server-f5nt.onrender.com/api/getallsecretary';
         toastMessage = 'Successfully retrieved secretaries!';
         break;
       case 'ADMIN':
-        url = 'https://server-gzmw.onrender.com/api/getalladmin';
+        url = 'https://client-server-f5nt.onrender.com/api/getalladmin';
         toastMessage = 'Successfully retrieved admins!';
         break;
       case 'USERS':
-        url = 'https://server-gzmw.onrender.com/api/getallinstructors';
+        url = 'https://client-server-f5nt.onrender.com/api/getallinstructors';
         toastMessage = 'Successfully retrieved users!';
         break;
       default:
@@ -159,7 +159,7 @@ const Secretaryfacultymanager = ({ history }) => {
 
   useEffect(() => {
     axios
-      .get('https://server-gzmw.onrender.com/api/getallusers', {
+      .get('https://client-server-f5nt.onrender.com/api/getallusers', {
         params: { token },
         headers: {
           Authorization: `Bearer ${token}`,
@@ -184,7 +184,7 @@ const Secretaryfacultymanager = ({ history }) => {
         } else if (editedUser.email === email) {
           toast.error('You cannot delete your own account!');
         } else {
-          const result = await axios.post('https://server-gzmw.onrender.com/api/deletethisuser', 
+          const result = await axios.post('https://client-server-f5nt.onrender.com/api/deletethisuser', 
             { email: editedUser.email,
               token }, 
             {
@@ -219,7 +219,7 @@ const Secretaryfacultymanager = ({ history }) => {
       if (editedUser.role === 1) {
         toast.error('You cannot edit this user role!');
       } else {
-        await axios.post('https://server-gzmw.onrender.com/api/updateuserrole', {
+        await axios.post('https://client-server-f5nt.onrender.com/api/updateuserrole', {
           email: editedUser.email,
           role: updatedrole,
           token
@@ -227,7 +227,7 @@ const Secretaryfacultymanager = ({ history }) => {
           headers: { Authorization: `Bearer ${token}` }
         });
 
-        const getUsersResponse = await axios.get('https://server-gzmw.onrender.com/api/getallusers', {
+        const getUsersResponse = await axios.get('https://client-server-f5nt.onrender.com/api/getallusers', {
           params: { token },
           headers: { Authorization: `Bearer ${token}` }
         });
